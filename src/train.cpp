@@ -1,6 +1,11 @@
 // Copyright 2021 NNTU-CS
 #include "train.h"
 
+Train::Train() {
+  countOp = 0;
+  first = nullptr;
+}
+
 void Train::addCage(bool light) {
   Cage* cur = new Cage;
   cur->light = light;
@@ -34,7 +39,7 @@ int Train::getLength() {
         countOp++;
         cur = cur->prev;
       }
-			if (cur->light == false) {
+      if (cur->light == false) {
         return Dynamic_counter;
       } else {
         Dynamic_counter = 1;
